@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Music Synthesizer</title>
+    <!-- Add CSS links here -->
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div id="welcome-message">
+      <p>Start Synthesizing Music!</p>
+      <!-- <button id="start-button">Start Making Music!</button> -->
+    </div>
+    <div id="synth">
+        <div id="keyboard">
+            <!-- Keys for the synthesizer -->
+            <button class="key" data-note="C">C</button>
+            <button class="key" data-note="D">D</button>
+            <button class="key" data-note="E">E</button>
+            <button class="key" data-note="F">F</button>
+            <button class="key" data-note="G">G</button>
+            <button class="key" data-note="A">A</button>
+            <button class="key" data-note="B">B</button>
+            <button class="key" data-note="C-high">CH</button>
+            <button class="key" data-note="C2">C2</button>
+            <button class="key" data-note="D2">D2</button>
+            <button class="key" data-note="E2">E2</button>
+            <button class="key" data-note="F2">F2</button>
+            <button class="key" data-note="G2">G2</button>
+            <button class="key" data-note="A2">A2</button>
+            <button class="key" data-note="B2">B2</button>
+            <button class="key" data-note="C2-high">C2H</button>
+            <!-- Add more keys as needed -->
+        </div>
+        <div id="controls">
+            <!-- Add controls like volume, pitch, etc. -->
+            <input type="range" id="volume" min="0" max="1" step="0.01" value="0.5">
+            <label for="sustain">Sustain (seconds):</label>
+            <input type="range" id="sustain" min="0.1" max="3" step="0.1" value="1">
+            <label for="waveform">Waveform:</label>
+            <select id="waveform">
+              <option value="sine">Sine</option>
+              <option value="square">Square</option>
+              <option value="sawtooth">Sawtooth</option>
+              <option value="triangle">Triangle</option>
+            </select>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

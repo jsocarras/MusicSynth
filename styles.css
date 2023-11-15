@@ -1,0 +1,59 @@
+body, html {
+    background-color: #ffefd5; /* Peach background */
+    font-family: 'Arial', sans-serif;
+}
+
+#welcome-message {
+    background-color: #ff69b4; /* Bright pink */
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+#synth {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+#keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.key {
+    padding: 15px;
+    margin: 5px;
+    /* background-color: #f0f0f0; */
+    background-color: #00ced1; /* Bright turquoise */
+    color: #fff;
+    border-radius: 8px;
+    /* Add more styling for the Memphis look */
+    border: 1px solid #ddd;
+    flex-basis: 18%; /* Adjust based on how many keys you have */
+    text-align: center;
+    font-size: 1.2em;
+    min-height: 60px; /* Larger touch targets */
+    box-sizing: border-box;
+}
+
+#controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    background-color: #ffa07a; /* Light salmon */
+    border-radius: 8px;
+}
+
+#controls input[type="range"], #controls select {
+    width: 80%; /* Full width controls */
+    max-width: 300px; /* But not too wide */
+}
+
+#controls label {
+    margin-top: 10px;
+}
