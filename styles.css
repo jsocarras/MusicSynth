@@ -57,3 +57,12 @@ body, html {
 #controls label {
     margin-top: 10px;
 }
+
+.key.active {
+     background-color: yellow; // Or any other style change
+}
+
+#start-button.clicked {
+    background-color: #4CAF50; /* Green background for clicked state */
+    color: white;
+}

@@ -5,6 +5,23 @@ let isAudioContextStarted = false;
 //     document.getElementById('welcome-message').style.display = 'none';
 // });
 
+// document.getElementById('start-button').addEventListener('click', function() {
+//     document.getElementById('welcome-message').style.display = 'none';
+//     startAudioContext(); // Ensure audio context is started
+//     playTwinkleTwinkle(); // Start playing the demo
+// });
+
+document.getElementById('start-button').addEventListener('click', function() {
+    if (!this.classList.contains('clicked')) {
+        this.classList.add('clicked'); // Add a class to the button when clicked
+        this.disabled = true; // Disable the button to prevent multiple clicks
+        startAudioContext(); // Ensure audio context is started
+        playTwinkleTwinkle(); // Start playing the demo
+    }
+});
+
+
+
 document.querySelectorAll('.key').forEach(key => {
     key.addEventListener('touchstart', (e) => {
         e.preventDefault(); // Prevents the default touch event
@@ -62,3 +79,29 @@ function noteToFrequency(note) {
 document.querySelectorAll('.key').forEach(key => {
     key.addEventListener('click', () => playNote(key.dataset.note));
 });
+
+function playTwinkleTwinkle() {
+    let notes = ['C', 'C', 'G', 'G', 'A', 'A', 'G', 'F', 'F', 'E', 'E', 'D', 'D', 'C'];
+    let noteDuration = 1000; // Duration of each note in milliseconds
+
+    notes.forEach((note, index) => {
+        setTimeout(() => {
+            playNote(note);
+            highlightKey(note, noteDuration); // Pass note duration for highlighting
+        }, noteDuration * index);
+    });
+}
+
+function highlightKey(note, duration) {
+    let key = document.querySelector(`.key[data-note="${note}"]`);
+    key.classList.add('active');
+
+    // Remove the 'active' class after the duration of the note
+    setTimeout(() => {
+        key.classList.remove('active');
+    }, duration);
+}
+
+
+// Call this function to start the demo
+// playTwinkleTwinkle();
